@@ -1,8 +1,12 @@
-import streamlit as st 
-import pandas as pd 
-import numpy as np                  # Para crear vectores y matrices n dimensionales
-#import matplotlib.pyplot as plt     # Para la generación de gráficas a partir de los datos
-#from apyori import apriori
+import streamlit as st
 
-image = Image.open('IA_salud.png')
-st.image(image, use_column_width = True)
+# Título de la página
+st.title("Carga de imágenes en Streamlit")
+
+# Componente para cargar la imagen
+uploaded_file = st.file_uploader("Selecciona una imagen", type=["jpg", "jpeg", "png"])
+
+# Verificar si se cargó un archivo
+if uploaded_file is not None:
+    # Mostrar la imagen cargada
+    st.image(uploaded_file, caption="Imagen cargada", use_column_width=True)
